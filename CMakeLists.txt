@@ -13,3 +13,22 @@ add_library(imgui STATIC
     imstb_truetype.h
     imgui_demo.cpp
 )
+
+# ImGui 설치 구성
+install(TARGETS imgui
+    EXPORT imguiTargets
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
+)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    DESTINATION include/imgui
+    FILES_MATCHING PATTERN "*.h"
+)
+
+# 설치용 CMake 파일 추가
+install(EXPORT imguiTargets
+    FILE imguiConfig.cmake
+    DESTINATION lib/cmake/imgui
+)
