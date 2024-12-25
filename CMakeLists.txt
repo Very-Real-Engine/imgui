@@ -12,6 +12,7 @@ add_library(imgui STATIC
     imstb_textedit.h
     imstb_truetype.h
     imgui_demo.cpp
+    imgui_tables.cpp  # 반드시 포함!
 )
 
 # ImGui 설치 구성
