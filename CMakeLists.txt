@@ -15,11 +15,6 @@ add_library(imgui STATIC
     imgui_tables.cpp  # 반드시 포함!
 )
 
-# Debug 빌드 시 라이브러리 이름에 'd' 접미사를 추가합니다.
-set_target_properties(imgui PROPERTIES
-    DEBUG_POSTFIX "d"
-)
-
 # ImGui 설치 구성
 install(TARGETS imgui
     EXPORT imguiTargets
